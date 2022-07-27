@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="response" type="responseType"/>
+  <xs:complexType name="barType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="addedby" use="optional"/>
+        <xs:attribute type="xs:string" name="comment" use="optional"/>
+        <xs:attribute type="xs:string" name="datacenter" use="optional"/>
+        <xs:attribute type="xs:string" name="dateoffset" use="optional"/>
+        <xs:attribute type="xs:string" name="dcname" use="optional"/>
+        <xs:attribute type="xs:string" name="enddate" use="optional"/>
+        <xs:attribute type="xs:string" name="group" use="optional"/>
+        <xs:attribute type="xs:string" name="id" use="optional"/>
+        <xs:attribute type="xs:string" name="isdbar" use="optional"/>
+        <xs:attribute type="xs:string" name="name" use="optional"/>
+        <xs:attribute type="xs:string" name="startdate" use="optional"/>
+        <xs:attribute type="xs:string" name="type" use="optional"/>
+        <xs:attribute type="xs:string" name="useroffset" use="optional"/>
+        <xs:attribute type="xs:string" name="usertype" use="optional"/>
+        <xs:attribute type="xs:string" name="hasnccduty" use="optional"/>
+        <xs:attribute type="xs:string" name="skype" use="optional"/>
+        <xs:attribute type="xs:string" name="extension" use="optional"/>
+        <xs:attribute type="xs:string" name="leaveend" use="optional"/>
+        <xs:attribute type="xs:string" name="leavestart" use="optional"/>
+        <xs:attribute type="xs:string" name="email" use="optional"/>
+        <xs:attribute type="xs:string" name="groups" use="optional"/>
+        <xs:attribute type="xs:string" name="times" use="optional"/>
+        <xs:attribute type="xs:string" name="userid" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="lineType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="dateoffset" use="optional"/>
+        <xs:attribute type="xs:string" name="groups" use="optional"/>
+        <xs:attribute type="xs:string" name="times" use="optional"/>
+        <xs:attribute type="xs:string" name="userid" use="optional"/>
+        <xs:attribute type="xs:string" name="addedby" use="optional"/>
+        <xs:attribute type="xs:string" name="comment" use="optional"/>
+        <xs:attribute type="xs:string" name="datacenter" use="optional"/>
+        <xs:attribute type="xs:string" name="dcname" use="optional"/>
+        <xs:attribute type="xs:string" name="enddate" use="optional"/>
+        <xs:attribute type="xs:string" name="group" use="optional"/>
+        <xs:attribute type="xs:string" name="id" use="optional"/>
+        <xs:attribute type="xs:string" name="isdbar" use="optional"/>
+        <xs:attribute type="xs:string" name="name" use="optional"/>
+        <xs:attribute type="xs:string" name="startdate" use="optional"/>
+        <xs:attribute type="xs:string" name="type" use="optional"/>
+        <xs:attribute type="xs:string" name="useroffset" use="optional"/>
+        <xs:attribute type="xs:string" name="usertype" use="optional"/>
+        <xs:attribute type="xs:string" name="hasnccduty" use="optional"/>
+        <xs:attribute type="xs:string" name="skype" use="optional"/>
+        <xs:attribute type="xs:string" name="extension" use="optional"/>
+        <xs:attribute type="xs:string" name="leaveend" use="optional"/>
+        <xs:attribute type="xs:string" name="leavestart" use="optional"/>
+        <xs:attribute type="xs:string" name="email" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="responseType">
+    <xs:choice maxOccurs="unbounded" minOccurs="0">
+      <xs:element type="barType" name="bar" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="lineType" name="line"/>
+    </xs:choice>
+  </xs:complexType>
+</xs:schema>
