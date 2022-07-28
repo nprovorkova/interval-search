@@ -2,7 +2,6 @@ package net.iptp.analyzer.web.rest;
 
 import net.iptp.analyzer.service.TimeIntervalService;
 import net.iptp.analyzer.service.dto.IntervalDTO;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,7 +26,7 @@ public class TimeIntervalResource {
      *
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of unassigned time intervals in body.
      */
-    @GetMapping(value = "/unassigned-intervals", consumes = MediaType.APPLICATION_XML_VALUE)
+    @GetMapping(value = "/unassigned-intervals")
     public ResponseEntity<List<IntervalDTO>> getAllUnassignedIntervals(InputStream inputStream) throws IOException {
         try {
             List<IntervalDTO> unassignedIntervalList = timeIntervalService.analyzeTimeIntervals(inputStream);

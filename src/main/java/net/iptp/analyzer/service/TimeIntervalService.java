@@ -1,12 +1,13 @@
 package net.iptp.analyzer.service;
 
 import net.iptp.analyzer.config.Constants;
-import net.iptp.analyzer.exception.TimeIntervalAnalyzerException;
 import net.iptp.analyzer.generated.BarType;
 import net.iptp.analyzer.generated.ObjectFactory;
 import net.iptp.analyzer.generated.ResponseType;
 import net.iptp.analyzer.service.dto.IntervalDTO;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
@@ -40,9 +41,9 @@ public class TimeIntervalService {
             return findUnassignedIntervalList(workingIntervalList);
         } catch (JAXBException e) {
             if (e.getMessage() == null) {
-                throw new TimeIntervalAnalyzerException(e.getCause().getMessage());
+                throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getCause().getMessage());
             } else {
-                throw new TimeIntervalAnalyzerException(e.getMessage());
+                throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
             }
         }
     }
@@ -93,7 +94,7 @@ public class TimeIntervalService {
             Date endDate = formatter.parse(barType.getEnddate());
             interval.setEndDate(endDate);
         } catch (ParseException e) {
-            throw new TimeIntervalAnalyzerException(e.getMessage());
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
         }
         return interval;
     }

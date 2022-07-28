@@ -9,14 +9,14 @@ This project uses Java 8 and Spring Boot Java Framework.
 
 Application will run on http://localhost:8080.
 
-Example request unassigned time intervals
+##### Example request unassigned time intervals:
 ```
 GET /api/unassigned-intervals
 ```
-with xml file in body.
+Request body must contain a binary file with time intervals.
 
 
-Example response
+##### Example response:
 Status code 200
 ```json
 [
