@@ -1,9 +1,8 @@
 
-package net.iptp.generated;
+package net.iptp.analyzer.generated;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -35,14 +34,12 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "responseType", propOrder = {
     "barOrLine"
 })
-@Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2022-07-27T10:35:31+03:00", comments = "JAXB RI v2.2.8-b130911.1802")
 public class ResponseType {
 
     @XmlElements({
         @XmlElement(name = "bar", type = BarType.class),
         @XmlElement(name = "line", type = LineType.class)
     })
-    @Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2022-07-27T10:35:31+03:00", comments = "JAXB RI v2.2.8-b130911.1802")
     protected List<Object> barOrLine;
 
     /**
@@ -68,7 +65,6 @@ public class ResponseType {
      * 
      * 
      */
-    @Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2022-07-27T10:35:31+03:00", comments = "JAXB RI v2.2.8-b130911.1802")
     public List<Object> getBarOrLine() {
         if (barOrLine == null) {
             barOrLine = new ArrayList<Object>();
